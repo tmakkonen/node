@@ -1,10 +1,16 @@
 $(document).ready(function() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        showMap(position.coords.latitude, position.coords.longitude);
-    });
-  }
+    locateMe();
 });
+
+function locateMe() {
+   navigator.geolocation.getCurrentPosition(function(position) {
+        showMap(position.coords.latitude, position.coords.longitude);
+   });
+}
+
+function locateIP(ip) {
+
+}
 
 function showMap(lat, lon) {
     var point = new google.maps.LatLng(lat, lon);
